@@ -23,7 +23,7 @@ namespace ChatRoomServer
                 {
                     Console.WriteLine("Waiting for incoming client connections...");
                     TcpClient client = listener.AcceptTcpClient();
-                    Console.WriteLine("Accepted new client connection...");
+                    Console.WriteLine("Accepted new client connection...", client);
                     StreamReader reader = new StreamReader(client.GetStream());
                     StreamWriter writer = new StreamWriter(client.GetStream());
                     String s = String.Empty;
@@ -33,9 +33,7 @@ namespace ChatRoomServer
                         writer.WriteLine("From server -> " + s);
                         writer.Flush();
                     }
-                    reader.Close();
-                    writer.Close();
-                    client.Close();
+                
                 }
             }
             catch (Exception e)

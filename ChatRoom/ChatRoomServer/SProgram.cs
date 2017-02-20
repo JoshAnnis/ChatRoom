@@ -4,17 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
-namespace ChatRoomServer
+namespace ServerRoom
 {
-    class SProgram
+    class ServerProgram
     {
         static void Main(string[] args)
         {
             Server server = new Server();
-            server.start();
-
+            server.Main();
         }
     }
 }
